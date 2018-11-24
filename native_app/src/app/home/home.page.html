@@ -1,19 +1,20 @@
 <ion-content>
-  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
-    <ion-fab-button>
-      <ion-icon name="share"></ion-icon>
-    </ion-fab-button>
-    <ion-fab-list side="top">
+  <div id="map_canvas">
+    <ion-fab vertical="end" horizontal="center" slot="fixed">
       <ion-fab-button>
-        <ion-icon name="logo-vimeo"></ion-icon>
+        <ion-icon name="share"></ion-icon>
       </ion-fab-button>
-      <ion-fab-button>
-        <ion-icon name="logo-instagram"></ion-icon>
-      </ion-fab-button>
-      <ion-fab-button (click)="test()">
-        <ion-icon name="logo-twitter"></ion-icon>
-      </ion-fab-button>
-    </ion-fab-list>
-  </ion-fab>
-  <div id="map_canvas"></div>
+      <ion-fab-list side="top">
+        <ion-fab-button>
+          <ion-icon name="logo-vimeo"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button>
+          <ion-icon name="logo-instagram"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button (click)="reportCrash()">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </ion-fab-button>
+      </ion-fab-list>
+    </ion-fab>
+  </div>
 </ion-content>

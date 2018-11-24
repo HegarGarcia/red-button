@@ -15,6 +15,6 @@ export class IncidentsService {
   }
 
   getIncidents() {
-    return this.firestore.collection('incidents').get();
+    return this.firestore.collection('incidents').valueChanges() as Observable<IIncidentPayload[]>;
   }
 }

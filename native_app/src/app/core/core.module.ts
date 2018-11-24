@@ -7,3 +7,12 @@ import { IncidentsService } from './incidents.service';
   providers: [AuthService, IncidentsService]
 })
 export class CoreModule {}
+
+export interface IIncidentPayload {
+  coords: {
+    latitude: string;
+    longitude: string;
+  };
+  event: string;
+  datatime: Date;
+}

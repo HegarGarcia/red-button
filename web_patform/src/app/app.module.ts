@@ -8,9 +8,11 @@ import { MapViewModule } from './map-view/map-view.module';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { CoreModule } from '@core/core.module';
-
+import {MatButtonModule} from '@angular/material/button';
 
 import { AgmCoreModule } from '@agm/core';
+
+
 
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ import { AgmCoreModule } from '@agm/core';
     MapViewModule,
     AppRoutingModule,
     MatSidenavModule,
+    MatButtonModule,
     CoreModule,
     AgmCoreModule,
     AgmCoreModule.forRoot({

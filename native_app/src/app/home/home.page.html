@@ -1,3 +1,19 @@
-<ion-content> 
-  <div id="map_canvas"></div>  
+<ion-content>
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="share"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button>
+        <ion-icon name="logo-vimeo"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>
+        <ion-icon name="logo-instagram"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button (click)="test()">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+  <div id="map_canvas"></div>
 </ion-content>

@@ -3,7 +3,7 @@
     <name>MyApp</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
-    <content original-src="index.html" src="http://192.168.42.66:8100" />
+    <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -86,6 +86,7 @@
         <variable name="API_KEY_FOR_ANDROID" value="AIzaSyAsmY7Ka-rUSyGbwsooh0XTJlBLLckRt_o" />
         <variable name="API_KEY_FOR_IOS" value="AIzaSyAsmY7Ka-rUSyGbwsooh0XTJlBLLckRt_o" />
     </plugin>
-    <allow-navigation href="http://192.168.42.66:8100" sessionid="da52ee20" />
+    <allow-navigation href="http://192.168.42.66:8100" sessionid="c34dbd73" />
     <engine name="browser" spec="5.0.4" />
+    <engine name="android" spec="7.1.4" />
 </widget>

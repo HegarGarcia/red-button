@@ -44,7 +44,7 @@ export class HomePage implements OnInit {
         latitude: this.location.latLng.lat,
         longitude: this.location.latLng.lng
       },
-      datatime: String(Date.now()),
+      datatime: +(Date.now()),
       event: 'choque'
     };
 
@@ -53,11 +53,31 @@ export class HomePage implements OnInit {
   }
 
   reportGunfire() {
+    const payload: IIncidentPayload = {
+      coords: {
+        latitude: this.location.latLng.lat,
+        longitude: this.location.latLng.lng
+      },
+      datatime: +(Date.now()),
+      event: 'disparo'
+    };
 
+    this.incident.addIncident(payload);
+    console.log(payload);
   }
 
   reportRunOver() {
+    const payload: IIncidentPayload = {
+      coords: {
+        latitude: this.location.latLng.lat,
+        longitude: this.location.latLng.lng
+      },
+      datatime: +(Date.now()),
+      event: 'atropellamiento'
+    };
 
+    this.incident.addIncident(payload);
+    console.log(payload);
   }
   /*emergency() {
     this.callNumber.callNumber('3141465426', true)

@@ -1,0 +1,30 @@
+.container {
+  height: 100%;
+  width: 100%;
+}
+
+.side-nav {
+  display: flex;
+  width: 300px;
+  flex-flow: column;
+}
+
+.app-title {
+  top: 10px;
+  left: 50px;
+  position: fixed;
+  display: flex;
+  flex-flow: column;
+  width: 200px;
+  background-color: white;
+  height: 80;
+  padding: 4px;
+  border-radius: 4px;
+  box-shadow: 1px 2px 1px gray;
+  z-index: 10;
+}
+
+.app-title h1 {
+  margin: 0;
+  text-align: center;
+}

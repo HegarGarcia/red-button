@@ -1,12 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
-<<<<<<< Updated upstream
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-=======
-body, html {
-  display: flex;
-  flex-flow: column;
-  margin: 0;
+* {
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
 }
->>>>>>> Stashed changes
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+}

@@ -14,10 +14,6 @@ export class AuthService {
     this.afAuth.auth.signInWithPopup(new auth.FacebookAuthProvider());
   }
 
-  logout() {
-    this.afAuth.auth.signOut();
-  }
-
   anonymousLogin() {
     this.afAuth.auth.signInAnonymously();
   }

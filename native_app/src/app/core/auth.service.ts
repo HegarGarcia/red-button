@@ -11,7 +11,7 @@ export class AuthService {
   }
 
   loginWithFacebook() {
-    this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
+    this.afAuth.auth.signInWithPopup(new auth.FacebookAuthProvider());
   }
 
   logout() {

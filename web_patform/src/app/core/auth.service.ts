@@ -1,17 +1,20 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { auth } from 'firebase/auth';
 
 @Injectable()
 export class AuthService {
   authState: firebase.User;
 
-  constructor(private fireAuth: AngularFireAuth) {
-    fireAuth.authState.subscribe(auth => (this.authState = auth));
+  constructor(private afAuth: AngularFireAuth) {
+    afAuth.authState.subscribe(state => (this.authState = state));
+  }
+
+  loginWithFacebook() {
+    this.afAuth.auth.signInWithPopup(new auth.FacebookAuthProvider());
   }
 
   anonymousLogin() {
-    return this.fireAuth.auth
-      .signInAnonymously()
-      .then(() => console.log('Logged'));
+    this.afAuth.auth.signInAnonymously();
   }
 }

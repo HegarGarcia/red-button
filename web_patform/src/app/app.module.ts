@@ -7,6 +7,10 @@ import { AppComponent } from './app.component';
 import { MapViewModule } from './map-view/map-view.module';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { CoreModule } from '@core/core.module';
+
+
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -17,7 +21,12 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     BrowserAnimationsModule,
     MapViewModule,
     AppRoutingModule,
-    MatSidenavModule
+    MatSidenavModule,
+    CoreModule,
+    AgmCoreModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAsmY7Ka-rUSyGbwsooh0XTJlBLLckRt_o'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

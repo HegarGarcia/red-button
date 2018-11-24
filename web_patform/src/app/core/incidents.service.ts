@@ -11,12 +11,10 @@ export class IncidentsService {
   constructor(private firestore: AngularFirestore) {}
 
   addIncident(payload: IIncidentPayload) {
-    this.firestore.collection('incidents').add(payload);
+    return this.firestore.collection('incidents').add(payload);
   }
 
   getIncidents() {
-    return this.firestore.collection('incidents').valueChanges() as Observable<
-      IIncidentPayload[]
-    >;
+    return this.firestore.collection('incidents').valueChanges() as Observable<IIncidentPayload[]>;
   }
 }

@@ -1,7 +1,5 @@
 {
   "name": "HackColima18",
-  "integrations": {
-    "cordova": {}
-  },
+  "integrations": {},
   "type": "angular"
 }

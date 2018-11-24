@@ -1,6 +1,6 @@
 <ion-content>
   <div id="map_canvas">
-    <ion-fab vertical="end" horizontal="center" slot="fixed">
+    <ion-fab vertical="bottom" horizontal="center" slot="fixed">
       <ion-fab-button>
         <ion-icon name="share"></ion-icon>
       </ion-fab-button>
@@ -8,7 +8,7 @@
         <ion-fab-button>
           <ion-icon name="logo-vimeo"></ion-icon>
         </ion-fab-button>
-        <ion-fab-button>
+        <ion-fab-button (click)="emergency()">
           <ion-icon name="logo-instagram"></ion-icon>
         </ion-fab-button>
         <ion-fab-button (click)="reportCrash()">

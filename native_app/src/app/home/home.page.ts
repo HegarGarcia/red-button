@@ -13,6 +13,10 @@ import {
   GoogleMapsEvent
 } from '@ionic-native/google-maps/ngx';
 
+import { IncidentsService } from '@core/incidents.service';
+import { IIncidentPayload } from '@core/core.module';
+// import { CallNumber } from '@ionic-native/call-number/ngx';
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -27,7 +31,7 @@ export class HomePage implements OnInit {
   myLocationOptions: MyLocationOptions = {
     enableHighAccuracy: true
   };
-  constructor(private platform: Platform) { }
+  constructor(private platform: Platform, private incident: IncidentsService/*private callNumber: CallNumber*/ ) { }
 
   async ngOnInit() {
     await this.platform.ready();
@@ -35,12 +39,31 @@ export class HomePage implements OnInit {
   }
 
   reportCrash() {
-    console.log(this.location);
+    const payload: IIncidentPayload = {
+      coords: {
+        latitude: this.location.latLng.lat,
+        longitude: this.location.latLng.lng
+      },
+      datatime: String(Date.now()),
+      event: 'choque'
+    };
+
+    this.incident.addIncident(payload);
+    console.log(payload);
   }
 
   reportGunfire() {
 
   }
+
+  reportRunOver() {
+
+  }
+  /*emergency() {
+    this.callNumber.callNumber('3141465426', true)
+      .then(res => console.log('Launched dialer!', res))
+      .catch(err => console.log('Error launching dialer', err));
+  }*/
 
   loadMap() {
     Environment.setEnv({

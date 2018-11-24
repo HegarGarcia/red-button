@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+<<<<<<< Updated upstream
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { environment } from '@environments/environment';
@@ -20,6 +21,25 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule
+=======
+import { MapViewComponent } from './map-view/map-view.component';
+
+// AngularGoogleMaps Module
+import { AgmCoreModule } from '@agm/core';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    MapViewComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    AgmCoreModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAsmY7Ka-rUSyGbwsooh0XTJlBLLckRt_o'
+    })
+>>>>>>> Stashed changes
   ],
   providers: [],
   bootstrap: [AppComponent]

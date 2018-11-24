@@ -3,7 +3,7 @@
     <name>MyApp</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
-    <content original-src="index.html" src="http://192.168.42.66:8100" />
+    <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -88,4 +88,15 @@
     </plugin>
     <allow-navigation href="http://192.168.42.66:8100" sessionid="da52ee20" />
     <engine name="browser" spec="5.0.4" />
+    <plugin name="cordova-plugin-buildinfo" spec="2.0.2" />
+    <plugin name="cordova-universal-links-plugin" spec="~1.2.1" />
+    <plugin name="cordova-plugin-browsertab" spec="0.2.0" />
+    <plugin name="cordova-plugin-inappbrowser" spec="3.0.0" />
+    <universal-links>
+        <host name="hls.page.link" scheme="https" />
+        <host name="security-colima-2018.firebaseapp.com" scheme="https">
+            <path url="/__/auth/callback"/>
+        </host>
+    </universal-links>
+    <preference name="AndroidLaunchMode" value="singleTask" />
 </widget>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Platform } from '@ionic/angular';
+import { ModalController, Platform } from '@ionic/angular';
 import {
   MyLocationOptions,
   MyLocation,
@@ -10,11 +10,16 @@ import {
   Environment,
   LocationService,
   Marker,
-  GoogleMapsEvent
+  GoogleMapsEvent,
+  MarkerCluster
 } from '@ionic-native/google-maps/ngx';
 
 import { IncidentsService } from '@core/incidents.service';
 import { IIncidentPayload } from '@core/core.module';
+
+import { ModalPage } from '../modal/modal.page';
+
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -27,12 +32,18 @@ export class HomePage implements OnInit {
   myLocationOptions: MyLocationOptions = {
     enableHighAccuracy: true
   };
+  recentEvents: Observable<IIncidentPayload[]>;
 
-  constructor(private platform: Platform, private incident: IncidentsService) {}
+  constructor(
+    private platform: Platform,
+    private incidents: IncidentsService,
+    private modalController: ModalController
+  ) {}
 
   async ngOnInit() {
     await this.platform.ready();
     await this.loadMap();
+    await this.loadMarkers();
   }
 
   report(event) {
@@ -45,7 +56,7 @@ export class HomePage implements OnInit {
       event
     };
 
-    this.incident.addIncident(payload);
+    this.incidents.addIncident(payload);
   }
 
   async loadMap() {
@@ -69,13 +80,50 @@ export class HomePage implements OnInit {
       }
     };
     this.map = GoogleMaps.create('map_canvas', options);
-    const marker: Marker = this.map.addMarkerSync({
+    await this.addCurrentLocationMarker();
+  }
+
+  async addCurrentLocationMarker() {
+    return this.map.addMarker({
       icon: 'blue',
       position: {
         lat: this.location.latLng.lat,
         lng: this.location.latLng.lng
       }
     });
-    // marker.on(GoogleMapsEvent.MARKER_CLICK).subscribe(() => { });
   }
+
+  loadMarkers() {
+    const date = new Date();
+    date.setHours(date.getHours() - 1);
+    this.incidents.query('datatime', '>', +date).subscribe(async incidents => {
+      await this.map.clear();
+      await this.addCurrentLocationMarker();
+      incidents.forEach(incident => {
+        const marker = this.map.addMarkerSync({
+          position: {
+            lat: incident.coords.latitude,
+            lng: incident.coords.longitude
+          }
+        });
+        marker.on(GoogleMapsEvent.MARKER_CLICK).subscribe(async () => {
+          const modal = await this.createModal(incident);
+          await modal.present();
+        });
+      });
+    });
+  }
+
+  async createModal(props) {
+    return this.modalController.create({
+      component: ModalPage,
+      componentProps: props
+    });
+  }
+}
+
+function toTitleCase(str) {
+  return str.replace(/\w\S*/g, function(txt) {
+    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+  });
 }

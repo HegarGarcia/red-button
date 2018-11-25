@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="closeModal()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title> {{ title }} </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-text>
+    <h2 style="margin-top: 0px">Direccion</h2>
+    <p>{{ data.address }}</p>
+  </ion-text>
+
+  <ion-list>
+    <ion-list-header> <ion-label>Comentarios</ion-label> </ion-list-header>
+    <ion-item *ngFor="let comment of (comments | async)">
+      <ion-label>{{ comment.text }}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

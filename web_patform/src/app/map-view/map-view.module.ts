@@ -6,12 +6,20 @@ import { MapViewComponent } from './map-view.component';
 
 // AngularGoogleMaps Module
 import { AgmCoreModule } from '@agm/core';
+import { IncidentComponent } from './incident/incident.component';
+
+// Material UI
+import { MatIconModule } from '@angular/material';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
-    MapViewComponent
+    MapViewComponent,
+    IncidentComponent
   ],
   imports: [
+    MatIconModule,
+    MatCardModule,
     CommonModule,
     AgmCoreModule,
     AgmCoreModule.forRoot({

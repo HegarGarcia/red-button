@@ -4,7 +4,7 @@
   </div>
   <div>
     <mat-card-header class="incident-detail">
-      <mat-card-title>{{stringCapitalize(incident.event)}}</mat-card-title>
+      <mat-card-title>{{formatEventText(incident.event)}}</mat-card-title>
       <mat-card-subtitle>{{dateFormat(incident.datatime)}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>

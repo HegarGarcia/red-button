@@ -46,7 +46,18 @@ export class IncidentComponent implements OnInit {
     return newDate.toLocaleDateString('es-MX', options);
   }
 
-  stringCapitalize(word: string): string {
-    return word.charAt(0).toUpperCase() + word.slice(1);
+  formatEventText(event: string): string {
+    switch (event) {
+      case 'accidente-automovilistico':
+        return 'Accidente automovilístico';
+      case 'robo':
+        return 'Robo';
+      case 'conflicto-armado':
+        return 'Conflicto armado';
+      case 'homicidio':
+      return 'Homicidio';
+      default:
+        return 'Evento no definido';
+    }
   }
 }

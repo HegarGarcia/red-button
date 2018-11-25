@@ -102,7 +102,7 @@
         <variable name="PLAY_SERVICES_VERSION" value="15.0.1" />
         <variable name="ANDROID_SUPPORT_V4_VERSION" value="27.+" />
     </plugin>
-    <allow-navigation href="http://10.10.151.129:8100" sessionid="556c74ef" />
+    <allow-navigation href="http://192.168.42.108:8100" sessionid="b8a45ab4" />
     <engine name="browser" spec="5.0.4" />
     <engine name="android" spec="7.1.4" />
 </widget>

@@ -21,8 +21,6 @@ import {MatIconModule} from '@angular/material/icon';
 
 import { AgmCoreModule } from '@agm/core';
 
-
-
 @NgModule({
   declarations: [
     AppComponent

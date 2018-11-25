@@ -11,7 +11,9 @@ import {
   LocationService,
   Marker,
   GoogleMapsEvent,
-  MarkerCluster
+  Geocoder,
+  GeocoderRequest,
+  GeocoderResult
 } from '@ionic-native/google-maps/ngx';
 
 import { IncidentsService } from '@core/incidents.service';
@@ -46,17 +48,30 @@ export class HomePage implements OnInit {
     await this.loadMarkers();
   }
 
-  report(event) {
+  async report(event) {
     const payload: IIncidentPayload = {
       coords: {
         latitude: this.location.latLng.lat,
         longitude: this.location.latLng.lng
       },
       datatime: +Date.now(),
-      event
+      event,
+      address: await this.getAddress(this.location)
     };
 
     this.incidents.addIncident(payload);
+  }
+
+  getAddress(location) {
+    return Geocoder.geocode({
+      position: location.latLng
+    }).then((results: GeocoderResult[]) => {
+      if (results.length === 0) {
+        // Not found
+        return null;
+      }
+      return results[0].extra.lines.join(', ');
+    });
   }
 
   async loadMap() {

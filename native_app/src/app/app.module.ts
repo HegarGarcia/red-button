@@ -8,6 +8,9 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+import { HomePageModule } from './home/home.module';
+import { ModalPageModule } from './modal/modal.module';
 import { CoreModule } from '@core/core.module';
 
 import { environment } from '@environments/environment';
@@ -27,6 +30,8 @@ import { GoogleMaps } from '@ionic-native/google-maps';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
+    HomePageModule,
+    ModalPageModule,
     CoreModule
   ],
   providers: [

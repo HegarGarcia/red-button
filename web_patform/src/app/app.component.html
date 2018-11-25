@@ -1,8 +1,17 @@
 <mat-drawer-container class="container">
   <mat-drawer #drawer class="side-nav" >
-      <div class="app-title" (click)="drawer.toggle()">
+      <div class="app-title">
           <h1>ReportApp</h1>
       </div>
+      <mat-list class="navigation">
+        <mat-list-item>
+          <button mat-button routerLink="/">Mapa de incidencias</button>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+            <button mat-button routerLink="/graph">Análisis de incidencias</button>
+          </mat-list-item>
+      </mat-list>
   </mat-drawer>
   <div class="example-sidenav-content">
       <div class="app-title" (click)="drawer.toggle()">

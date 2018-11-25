@@ -24,6 +24,23 @@
   z-index: 10;
 }
 
+.app-title-open {
+  top: 10px;
+  left: 50px;
+  position: fixed;
+  display: flex;
+  flex-flow: column;
+  width: fit-content;
+  background-color: white;
+  height: 80;
+  padding: 4px;
+  border-radius: 4px;
+  box-shadow: 1px 2px 1px gray;
+  z-index: 10;
+
+  z-index: 10;
+}
+
 .app-title h1 {
   margin: 0;
   text-align: center;

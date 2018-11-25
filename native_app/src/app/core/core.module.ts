@@ -14,5 +14,5 @@ export interface IIncidentPayload {
     longitude: number;
   };
   event: string;
-  datatime: string;
+  datatime: number;
 }

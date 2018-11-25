@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ModalController, Platform } from '@ionic/angular';
+import { ModalController, Platform, Icon } from '@ionic/angular';
 import {
   MyLocationOptions,
   MyLocation,
@@ -13,7 +13,8 @@ import {
   GoogleMapsEvent,
   Geocoder,
   GeocoderRequest,
-  GeocoderResult
+  GeocoderResult,
+  MarkerIcon
 } from '@ionic-native/google-maps/ngx';
 
 import { IncidentsService } from '@core/incidents.service';
@@ -40,7 +41,7 @@ export class HomePage implements OnInit {
     private platform: Platform,
     private incidents: IncidentsService,
     private modalController: ModalController
-  ) {}
+  ) { }
 
   async ngOnInit() {
     await this.platform.ready();
@@ -138,7 +139,7 @@ export class HomePage implements OnInit {
 }
 
 function toTitleCase(str) {
-  return str.replace(/\w\S*/g, function(txt) {
+  return str.replace(/\w\S*/g, function (txt) {
     return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
   });
 }

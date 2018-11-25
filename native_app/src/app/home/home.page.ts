@@ -10,11 +10,15 @@ import {
   Environment,
   LocationService,
   Marker,
-  GoogleMapsEvent
+  GoogleMapsEvent,
+  Geocoder,
+  GeocoderRequest,
+  GeocoderResult
 } from '@ionic-native/google-maps/ngx';
 
 import { IncidentsService } from '@core/incidents.service';
 import { IIncidentPayload } from '@core/core.module';
+
 
 @Component({
   selector: 'app-home',
@@ -28,24 +32,36 @@ export class HomePage implements OnInit {
     enableHighAccuracy: true
   };
 
-  constructor(private platform: Platform, private incident: IncidentsService) {}
+  constructor(private platform: Platform, private incident: IncidentsService) { }
 
   async ngOnInit() {
     await this.platform.ready();
     await this.loadMap();
   }
 
-  report(event) {
+  async report(event) {
     const payload: IIncidentPayload = {
       coords: {
         latitude: this.location.latLng.lat,
         longitude: this.location.latLng.lng
       },
       datatime: +Date.now(),
-      event
+      event,
+      address: await this.getAddress(this.location)
     };
-
     this.incident.addIncident(payload);
+  }
+
+  getAddress(location) {
+    return Geocoder.geocode({
+      'position': location.latLng
+    }).then((results: GeocoderResult[]) => {
+      if (results.length === 0) {
+        // Not found
+        return null;
+      }
+      return results[0].extra.lines.join(', ');
+    });
   }
 
   async loadMap() {

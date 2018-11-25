@@ -15,4 +15,5 @@ export interface IIncidentPayload {
   };
   event: string;
   datatime: number;
+  address: string;
 }

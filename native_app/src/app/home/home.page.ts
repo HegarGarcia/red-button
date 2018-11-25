@@ -73,7 +73,7 @@ export class HomePage implements OnInit {
         longitude: this.location.latLng.lng
       },
       datatime: +(Date.now()),
-      event: 'atropellamiento'
+      event: 'atropellado'
     };
 
     this.incident.addIncident(payload);

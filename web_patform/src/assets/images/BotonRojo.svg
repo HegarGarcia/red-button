@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X7 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1024px" height="1024px" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 1024 1024"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil0 {fill:#A3141C}
+    .fil1 {fill:#C92719}
+    .fil2 {fill:#E34942}
+    .fil3 {fill:white}
+   ]]>
+  </style>
+ </defs>
+<symbol id="App_Icon" viewBox="-509 -475 1024 987">
+ <ellipse class="fil0" cx="3" cy="18" rx="512" ry="494"/>
+ <ellipse class="fil1" cx="3" cy="18" rx="423" ry="408"/>
+ <ellipse class="fil2" cx="3" cy="18" rx="329" ry="317"/>
+ <path class="fil3" d="M120 92l-20 0 0 36c0,50 -43,90 -97,90 -54,0 -97,-40 -97,-90l0 -36 -20 0c-21,0 -39,-16 -39,-35l0 -180c0,-20 18,-36 39,-36l234 0c21,0 39,16 39,36l0 180c0,19 -18,35 -39,35zm-117 -161c-21,0 -39,16 -39,36 0,19 18,36 39,36 21,0 39,-17 39,-36 0,-20 -18,-36 -39,-36zm60 161l-120 0 0 36c0,31 27,56 60,56 33,0 60,-25 60,-56l0 -36 0 0z"/>
+</symbol>
+ <g id="Capa_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_2696538863744">
+   <g>
+    <use transform="scale(0.999651 -1.03775)" y="-987" width="1024" height="987" xlink:href="#App_Icon"/>
+   </g>
+  </g>
+ </g>
+</svg>

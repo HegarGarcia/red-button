@@ -24,8 +24,6 @@ import {MatListModule} from '@angular/material/list';
 
 import { AgmCoreModule } from '@agm/core';
 
-
-
 @NgModule({
   declarations: [
     AppComponent

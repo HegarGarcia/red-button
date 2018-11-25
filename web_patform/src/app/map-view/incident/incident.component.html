@@ -1,0 +1,14 @@
+<mat-card *ngIf="incident" class="incident-details">
+  <div class="incident-street-image">
+      <mat-icon svgIcon="image"></mat-icon>
+  </div>
+  <div>
+    <mat-card-header class="incident-detail">
+      <mat-card-title>{{stringCapitalize(incident.event)}}</mat-card-title>
+      <mat-card-subtitle>{{dateFormat(incident.datatime)}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>Miau miau miau miau miau miau miau miau miau miau miau miau miau miau miau guau</p>
+    </mat-card-content>
+  </div>
+</mat-card>

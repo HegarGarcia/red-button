@@ -1,10 +1,30 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Home</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
+  <div id="map_canvas">
+    <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+      <ion-fab-button color="danger">
+        <ion-icon src="../../assets/resources/xd2.svg"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-list side="top">
+        <!-- Btn Atropello -->
+        <ion-fab-button (click)="report('accidente-automovilistico')">
+          <ion-icon src="../../assets/resources/atropello.svg"></ion-icon>
+        </ion-fab-button>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs">docs</a> will be your guide.</p>
+        <!-- Btn Disparos -->
+        <ion-fab-button (click)="report('conflicto-armado')">
+          <ion-icon src="../../assets/resources/disparos.svg"></ion-icon>
+        </ion-fab-button>
+
+        <!-- Btn Choque -->
+        <ion-fab-button (click)="report('homicidio')">
+          <ion-icon src="assets/resources/xd.svg"></ion-icon>
+        </ion-fab-button>
+
+        <!-- Btn Robo -->
+        <ion-fab-button (click)="report('robo')">
+          <ion-icon src="../../assets/resources/robo.svg"></ion-icon>
+        </ion-fab-button>
+      </ion-fab-list>
+    </ion-fab>
+  </div>
 </ion-content>

@@ -16,7 +16,12 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+
 import { AgmCoreModule } from '@agm/core';
+
+
 
 @NgModule({
   declarations: [
@@ -32,6 +37,8 @@ import { AgmCoreModule } from '@agm/core';
     MapViewModule,
     AppRoutingModule,
     MatSidenavModule,
+    MatButtonModule,
+    MatIconModule,
     CoreModule,
     AgmCoreModule,
     AgmCoreModule.forRoot({

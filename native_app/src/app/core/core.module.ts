@@ -10,9 +10,9 @@ export class CoreModule {}
 
 export interface IIncidentPayload {
   coords: {
-    latitude: string;
-    longitude: string;
+    latitude: number;
+    longitude: number;
   };
   event: string;
-  datatime: Date;
+  datatime: number;
 }

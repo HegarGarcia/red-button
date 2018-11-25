@@ -15,7 +15,8 @@ import { environment } from '@environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import {GoogleMaps} from "@ionic-native/google-maps";
+import { GoogleMaps } from '@ionic-native/google-maps';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],

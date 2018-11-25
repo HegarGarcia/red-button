@@ -17,8 +17,18 @@
 
   <ion-list>
     <ion-list-header> <ion-label>Comentarios</ion-label> </ion-list-header>
+    <ion-item>
+      <ion-input
+        id="input"
+        #commentInput
+        placeholder="Añade comentario"
+      ></ion-input>
+      <ion-button (click)="addComment(commentInput, commentInput.value)">
+        <ion-icon name="send"></ion-icon>
+      </ion-button>
+    </ion-item>
     <ion-item *ngFor="let comment of (comments | async)">
-      <ion-label>{{ comment.text }}</ion-label>
+      <ion-label>{{ comment.comment }}</ion-label>
     </ion-item>
   </ion-list>
 </ion-content>

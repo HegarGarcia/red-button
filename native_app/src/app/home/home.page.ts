@@ -45,39 +45,10 @@ export class HomePage implements OnInit {
         longitude: this.location.latLng.lng
       },
       datatime: +Date.now(),
-      event: 'choque'
+      event
     };
 
     this.incident.addIncident(payload);
-    console.log(payload);
-  }
-
-  reportGunfire() {
-    const payload: IIncidentPayload = {
-      coords: {
-        latitude: this.location.latLng.lat,
-        longitude: this.location.latLng.lng
-      },
-      datatime: +Date.now(),
-      event: 'disparo'
-    };
-
-    this.incident.addIncident(payload);
-    console.log(payload);
-  }
-
-  reportRunOver() {
-    const payload: IIncidentPayload = {
-      coords: {
-        latitude: this.location.latLng.lat,
-        longitude: this.location.latLng.lng
-      },
-      datatime: +Date.now(),
-      event: 'atropellado'
-    };
-
-    this.incident.addIncident(payload);
-    console.log(payload);
   }
 
   loadMap() {

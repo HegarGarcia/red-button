@@ -5,9 +5,9 @@
         </div>
     </mat-drawer>
     <div class="example-sidenav-content">
-        <div class="app-title" (click)="drawer.toggle()">
-                <button mat-button>Click me!</button>
-        </div>
+                <button mat-icon-button class="app-title-open" (click)="drawer.toggle()">
+                        <mat-icon aria-label="Example icon-button with a heart icon">menu</mat-icon>
+                      </button>
     </div>
     <router-outlet></router-outlet>
 </mat-drawer-container>

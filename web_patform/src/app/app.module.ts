@@ -22,8 +22,6 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 
-import { AgmCoreModule } from '@agm/core';
-
 @NgModule({
   declarations: [
     AppComponent
@@ -44,10 +42,6 @@ import { AgmCoreModule } from '@agm/core';
     MatDividerModule,
     MatListModule,
     CoreModule,
-    AgmCoreModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyAsmY7Ka-rUSyGbwsooh0XTJlBLLckRt_o'
-    })
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -14,4 +14,5 @@ export interface IIncidentPayload {
   };
   event: string;
   datatime: number;
+  score: number;
 }

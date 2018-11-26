@@ -11,6 +11,10 @@ export const environment = {
     projectId: 'security-colima-2018',
     storageBucket: 'security-colima-2018.appspot.com',
     messagingSenderId: '296041100489'
+  },
+  mapBox: {
+    accessToken:
+      'pk.eyJ1IjoiaGVnYXJnYXJjaWEiLCJhIjoiY2pveGFvbjJrMjJzMTNvczB5aDl2ZnJwOCJ9.0eXyJHqvZT0CGi6YBnAEnQ'
   }
 };
 

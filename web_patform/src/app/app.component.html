@@ -1,22 +1,20 @@
 <mat-drawer-container class="container">
-  <mat-drawer #drawer class="side-nav" >
-      <div class="app-title">
-          <h1>Boton Rojo</h1>
-      </div>
-      <mat-list class="navigation">
-        <mat-list-item>
-          <button mat-button routerLink="/">Mapa de incidencias</button>
-        </mat-list-item>
-        <mat-divider></mat-divider>
-        <mat-list-item>
-            <button mat-button routerLink="/graph">Análisis de incidencias</button>
-          </mat-list-item>
-      </mat-list>
+  <mat-drawer #drawer class="side-nav">
+    <div class="app-title"><h1>Boton Rojo</h1></div>
+    <mat-list class="navigation">
+      <mat-list-item>
+        <button mat-button routerLink="/">Mapa de incidencias</button>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <button mat-button routerLink="/graph">Análisis de incidencias</button>
+      </mat-list-item>
+    </mat-list>
   </mat-drawer>
   <div class="example-sidenav-content">
-      <div class="app-title-open" (click)="drawer.toggle()">
-          <img style="width: 80px;"src="./assets/images/BotonRojo.svg">
-      </div>
+    <div class="app-title-open" (click)="drawer.toggle()">
+      <img style="width: 80px;" src="./assets/images/BotonRojo.svg" />
+    </div>
   </div>
   <router-outlet></router-outlet>
 </mat-drawer-container>

@@ -1,4 +1,9 @@
-.map-view {
+.mapboxgl-canvas {
+  position: inherit !important;
   height: 100%;
   width: 100%;
+}
+
+#map {
+  height: 100vh;
 }
